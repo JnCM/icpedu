@@ -13,6 +13,14 @@
   ],
   "author": "Josué Nunes Campos",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JnCM/icpedu-chaincode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JnCM/icpedu-chaincode/issues"
+  },
+  "homepage": "https://github.com/JnCM/icpedu-chaincode/blob/main/README.md",
   "dependencies": {
     "fabric-contract-api": "^2.5.4",
     "fabric-shim": "^2.5.4",
