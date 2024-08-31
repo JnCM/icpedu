@@ -6,8 +6,8 @@ Pacote do chaincode utilizado para a prova de conceito do sistema ICPEdu, que ut
 
 - Windows 11 Pro 23H2;
 - Linux Ubuntu 22.04.6 LTS (WSL);
-- NodeJS 20.9.0;
-- Hyperledger Fabric 2.5.4;
+- NodeJS 20.13.1;
+- Hyperledger Fabric 2.5.6;
 
 ## Notas importantes
 
