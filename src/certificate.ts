@@ -10,11 +10,5 @@ export class Certificate {
     public docType?: string;
 
     @Property()
-    public SerialNumber: string = '';
-
-    @Property()
-    public CreatedAt: string = '';
-
-    @Property()
-    public ExpiresAt: string = '';
+    public HashString: string = '';
 }
