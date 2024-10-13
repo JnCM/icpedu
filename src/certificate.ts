@@ -10,5 +10,11 @@ export class Certificate {
     public docType?: string;
 
     @Property()
+    public TxID: string = '';
+
+    @Property()
+    public TxTimestamp: string = '';
+
+    @Property()
     public HashString: string = '';
 }

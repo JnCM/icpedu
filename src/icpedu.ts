@@ -4,8 +4,8 @@
  */
 // Deterministic JSON.stringify()
 import {Context, Contract, Info, Returns, Transaction} from 'fabric-contract-api';
-import stringify from 'json-stringify-deterministic';
-import sortKeysRecursive from 'sort-keys-recursive';
+// import stringify from 'json-stringify-deterministic';
+// import sortKeysRecursive from 'sort-keys-recursive';
 import {Certificate} from './certificate';
 
 @Info({title: 'ICPEdu', description: 'Smart contract for saving digital certificates'})
@@ -20,10 +20,15 @@ export class ICPEduContract extends Contract {
         }
 
         const certificate = {
-            HashString: hashString,
+            TxID: ctx.stub.getTxID(),
+            TxTimestamp: ctx.stub.getTxTimestamp(),
+            HashString: hashString
         };
+        const certificateBuffer = Buffer.from(JSON.stringify(certificate));
+        
+        ctx.stub.setEvent('SaveHash', certificateBuffer);
         // we insert data in alphabetic order using 'json-stringify-deterministic' and 'sort-keys-recursive'
-        await ctx.stub.putState(hashString, Buffer.from(stringify(sortKeysRecursive(certificate))));
+        await ctx.stub.putState(hashString, certificateBuffer);
     }
 
     // GetHash returns the certificate stored in the world state with given HashString.
